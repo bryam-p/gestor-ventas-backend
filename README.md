@@ -1,4 +1,4 @@
-###Pasos para levantar el proyecto:
+### Pasos para levantar el proyecto:
 
 ```
 npm install
