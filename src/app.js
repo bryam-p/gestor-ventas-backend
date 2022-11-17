@@ -9,6 +9,7 @@ import serviceRoutes from './routes/service.routes'
 import articleRoutes from './routes/article.routes'
 import bankAccountRoutes from './routes/bankAccount.routes'
 import clientRoutes from './routes/client.routes'
+import fileRoute from './routes/file.routes'
 
 const app = express();
 app.use(cors());
@@ -26,6 +27,6 @@ app.use(serviceRoutes)
 app.use(articleRoutes)
 app.use(bankAccountRoutes)
 app.use(clientRoutes)
-
+app.use(fileRoute)
 
 export default app;

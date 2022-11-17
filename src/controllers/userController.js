@@ -51,5 +51,28 @@ export const createNewUser = async (req, res) => { //POST
     }
 }
 
+export const updateUser = async (req, res) => {
+    const { name, last_name, email, rol } = req.body
+    const { id } = req.params
 
+    const pool = await getConnection();
+    await pool.request()
+        .input("id", id)
+        .input('name', sql.VarChar, name)
+        .input('last_name', sql.VarChar, last_name)
+        .input('email', sql.VarChar, email)
+        .input('rol', sql.VarChar, rol)
+        .query(queriesUser.updateById)
+    res.status(200).send('Usuario actualizado')
+}
+
+export const deleteUser = async (req, res) => {
+    const { id } = req.params
+
+    const pool = await getConnection();
+    await pool.request()
+        .input("id", id)
+        .query(queriesUser.delete)
+    res.status(200).send('Usuario eliminado')
+}
 

@@ -2,8 +2,8 @@ export const queriesUser = {
     getAll: 'SELECT * FROM [User]',
     createNew: 'INSERT [User] (name, last_name, rol, state, email, password) VALUES (@name, @last_name, @rol, @state, @email, @password)',
     getById: 'SELECT * FROM [User] WHERE id_user = @id',
-    // delete: 'DELETE FROM Proveedor WHERE idProveedor = @id',
-    // update: 'UPDATE Proveedor SET razonSocial = @razonSocial WHERE idProveedor = @id'
+    updateById: 'UPDATE [User] SET name = @name, last_name = @last_name, email = @email, rol = @rol WHERE id_user = @id',
+    delete: 'DELETE FROM dbo.[User] WHERE id_user= @id;',
 }
 
 export const queriesContractor = {
@@ -54,6 +54,10 @@ export const queriesClient = {
     getById: 'SELECT * FROM [client] WHERE id_client = @id',
     // delete: 'DELETE FROM Proveedor WHERE idProveedor = @id',
     // update: 'UPDATE Proveedor SET razonSocial = @razonSocial WHERE idProveedor = @id'
+}
+
+export const queriesFile = {
+    createNew: 'INSERT [files] (name, type, size, id_sale) VALUES (@name, @type, @size, @id_sale)',
 }
 
 
